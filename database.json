@@ -14,5 +14,37 @@
     {
         "todo": "Python",
         "complete": "false"
+    },
+    {
+        "todo": "HTML",
+        "complete": true
+    },
+    {
+        "todo": "CSS ",
+        "complete": false
+    },
+    {
+        "todo": "Javascript",
+        "complete": false
+    },
+    {
+        "todo": "Python",
+        "complete": false
+    },
+    {
+        "todo": "HTML",
+        "complete": true
+    },
+    {
+        "todo": "CSS ",
+        "complete": false
+    },
+    {
+        "todo": "Javascript",
+        "complete": false
+    },
+    {
+        "todo": "Python",
+        "complete": false
     }
 ]
