@@ -20,10 +20,9 @@ createApp({
 
         addTodo: function () {
             //Al post del form creiamo una chiamata axios che passa un oggetto che contiene i dati del v-model
-            console.log(this.newTodo.todo);
             axios
                 .post(this.createUrl, {
-                    todo: this.newTodo.todo
+                    newTodo: this.newTodo,
                 }, {
                     headers: {
                         "Content-Type": "multipart/form-data"
@@ -31,9 +30,11 @@ createApp({
 
                 }).then((response) => {
                     console.log(response);
+
                     this.todolist.push(
                         {
                             todo: this.newTodo.todo,
+                            complete: this.newTodo.complete
                         })//push
                 })//response
         }//addTodo

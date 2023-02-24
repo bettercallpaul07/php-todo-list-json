@@ -19,13 +19,13 @@ $response = [
 ];
 
 
+//specifico che la risposta è un json
+header('Content-Type: application/json');
 
 //lo rendo di nuovo un json per mandarlo come risposta in pagina
 $jsonResponse = json_encode($response);
 
 
-//specifico che la risposta è un json
-header('Content-Type: application/json');
 
 
 //stampo in pagina il risultato in JSON
