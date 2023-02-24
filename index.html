@@ -27,8 +27,9 @@
                 <li v-for="item in todolist" @click="finish(item)" :class="{
                     complete: item.complete
                 }">
-                    <p> {{ item.todo }}
-                    </p>
+                    <span>
+                        {{ item.todo }}
+                    </span>
                     <span>
                         <i class="fa-solid fa-trash-can"></i>
                     </span>
@@ -36,18 +37,18 @@
             </ul>
         </div>
 
-    </div>
-    <div>
-        <form action="create.php" method="POST" @submit-prevent="addTodo()">
-            <input v-model="todoTxt" class="txt" type="text" placeholder="Aggiungi una nuova todo...">
-            <input class="btn" type="submit">
-        </form>
+        <div>
+            <form action="create.php" method="POST" @submit.prevent="addTodo()">
+                <input v-model="newTodo.todo" name="todo" class="txt" type="text" placeholder="Aggiungi una nuova todo...">
+                <input class="btn" type="submit">
+            </form>
+
+        </div>
 
     </div>
 
 
     <!-- Script -->
-
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>

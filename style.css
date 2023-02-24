@@ -11,8 +11,6 @@
 body {
     background-color: #0265a3;
     height: 100vh;
-    overflow-y: hidden;
-
 }
 
 h1 {
@@ -44,7 +42,7 @@ h1 {
 
 }
 
-.todolist ul li p {
+.todolist ul li :first-child {
     flex-grow: 1;
 }
 

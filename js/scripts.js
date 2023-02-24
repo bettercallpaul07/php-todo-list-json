@@ -7,33 +7,36 @@ createApp({
             createUrl: './create.php',
             todolist: [],
             newTodo: {
-                todoTxt: "",
-                complete: false,
-            },
+                todo: "",
+                complete: false
+            }
         };
     },
     methods: {
+
         finish: function (element) {
             element.complete = !element.complete
-        },
-        addTodo() {
-            //Al post del form creiamo una chiamata axios (tramite array associativo)  che passa un oggetto con chiave che contiene il dato del v-model
-            axios.post(this.createUrl, {
-                todo: this.newTodo
-            }, {
-                headers: {
-                    "Content-Type": "multipart/form-data"
-                }
-            }).then((response) => {
-                console.log(response);
+        },//finish
 
-                this.todolist.push({
-                    todo: this.todoTxt
+        addTodo: function () {
+            //Al post del form creiamo una chiamata axios che passa un oggetto che contiene i dati del v-model
+            console.log(this.newTodo.todo);
+            axios
+                .post(this.createUrl, {
+                    todo: this.newTodo.todo
+                }, {
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    }//headers
 
-                })
-            }
-            )
-        }
+                }).then((response) => {
+                    console.log(response);
+                    this.todolist.push(
+                        {
+                            todo: this.newTodo.todo,
+                        })//push
+                })//response
+        }//addTodo
     },
     created() {
         axios
